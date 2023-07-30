@@ -15,70 +15,46 @@ extension Article: Identifiable {
 final class NewsapiVM: ObservableObject {
     @Published var articles: [Article] = []
     
-    init () {
-        nextPage()
-    }
-    
+    var rubric: String = ""
+        
     func nextPage() {
-        ArticlesAPI.everythingGet(q: "Vision Pro",
+        ArticlesAPI.everythingGet(q: rubric,
                                   from: "2023-07-01",
                                   sortBy: "publishedAt",
-                                  language: "ru",
+                                  language: "en",
                                   apiKey: "1dd3e90294f944c98f653a218f3a8ff4",
                                   page: 1) { data, error in
             debugPrint(error ?? "")
             self.articles = data?.articles ?? []
         }
     }
+    
+    func setRubric(newRubric: String) {
+        rubric = newRubric
+        nextPage()
+    }
 }
 
 struct NewsScreen: View {
     
-    @StateObject var newsapiVM: NewsapiVM = .init()
-    var pickerOptions = ["List", "Grid"]
-    @State var pickerVariant = 0
-    
-    var body: some View {
-        VStack {
-            Picker("", selection: $pickerVariant) {
-                ForEach(0..<pickerOptions.count, id: \.self) {i in
-                    Text(self.pickerOptions[i])
-                        .tag(i)
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            
-            switch pickerVariant {
-            case 0:
-                list
-            case 1:
-                grid
-            default:
-                EmptyView()
-            }
-        }
+     init(rubric: String) {
+        self.rubric = rubric
     }
     
-    var grid: some View {
-        ScrollView {
-            LazyVGrid(columns: Array(repeating: .init(), count: 2)) {
+    @StateObject var newsapiVM: NewsapiVM = .init()
+    var rubric: String
+    
+    var body: some View {
+        newsapiVM.setRubric(newRubric: rubric)
+        return VStack {
+            List {
                 ForEach(newsapiVM.articles) { article in
                     ListArticleCell(title: article.title ?? "",
                                     description: article.description ?? "")
                 }
             }
-            .padding(.horizontal, 20)
+            .listStyle(.insetGrouped)
         }
-    }
-    
-    var list: some View {
-        List {
-            ForEach(newsapiVM.articles) { article in
-                ListArticleCell(title: article.title ?? "",
-                                description: article.description ?? "")
-            }
-        }
-        .listStyle(.insetGrouped)
     }
 }
 
@@ -104,6 +80,6 @@ struct ListArticleCell: View {
 
 struct NewsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        NewsScreen()
+        NewsScreen(rubric: "")
     }
 }
