@@ -14,6 +14,7 @@
 		9DC676A22A6BF66A008F97B9 /* NewsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC676A12A6BF66A008F97B9 /* NewsScreen.swift */; };
 		9DC676AA2A6BFC06008F97B9 /* NewsapiNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 9DC676A92A6BFC06008F97B9 /* NewsapiNetworking */; };
 		9DD74F2B2A767CB000EFEC3E /* ScreenSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD74F2A2A767CB000EFEC3E /* ScreenSwitcher.swift */; };
+		9DD74F2E2A76863000EFEC3E /* UISystem in Frameworks */ = {isa = PBXBuildFile; productRef = 9DD74F2D2A76863000EFEC3E /* UISystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9DC676A82A6BFBE4008F97B9 /* NewsapiNetworking */ = {isa = PBXFileReference; lastKnownFileType = text; name = NewsapiNetworking; path = Modules/NewsapiNetworking; sourceTree = SOURCE_ROOT; };
 		9DC676AB2A6BFC4B008F97B9 /* generate_newsapi.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_newsapi.sh; sourceTree = "<group>"; };
 		9DD74F2A2A767CB000EFEC3E /* ScreenSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSwitcher.swift; sourceTree = "<group>"; };
+		9DD74F2C2A7685EE00EFEC3E /* UISystem */ = {isa = PBXFileReference; lastKnownFileType = text; name = UISystem; path = Modules/UISystem; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DC676AA2A6BFC06008F97B9 /* NewsapiNetworking in Frameworks */,
+				9DD74F2E2A76863000EFEC3E /* UISystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		9DC676922A6BF638008F97B9 /* AppSUI_HW_02 */ = {
 			isa = PBXGroup;
 			children = (
+				9DD74F2C2A7685EE00EFEC3E /* UISystem */,
 				9DC676A82A6BFBE4008F97B9 /* NewsapiNetworking */,
 				9DC676932A6BF638008F97B9 /* AppSUI_HW_02App.swift */,
 				9DC676952A6BF638008F97B9 /* ContentView.swift */,
@@ -105,6 +109,7 @@
 			name = AppSUI_HW_02;
 			packageProductDependencies = (
 				9DC676A92A6BFC06008F97B9 /* NewsapiNetworking */,
+				9DD74F2D2A76863000EFEC3E /* UISystem */,
 			);
 			productName = AppSUI_HW_02;
 			productReference = 9DC676902A6BF638008F97B9 /* AppSUI_HW_02.app */;
@@ -369,6 +374,10 @@
 		9DC676A92A6BFC06008F97B9 /* NewsapiNetworking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NewsapiNetworking;
+		};
+		9DD74F2D2A76863000EFEC3E /* UISystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UISystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -15,11 +15,11 @@ extension Article: Identifiable {
 final class NewsapiVM: ObservableObject {
     @Published var articles: [Article] = []
     
-    var rubric: String = ""
+    var rubric: String = "Apple"
         
     func nextPage() {
         ArticlesAPI.everythingGet(q: rubric,
-                                  from: "2023-07-01",
+                                  from: "2023-07-10",
                                   sortBy: "publishedAt",
                                   language: "en",
                                   apiKey: "1dd3e90294f944c98f653a218f3a8ff4",
