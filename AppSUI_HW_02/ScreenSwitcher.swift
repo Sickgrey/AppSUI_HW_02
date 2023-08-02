@@ -12,6 +12,7 @@ struct ScreenSwitcher: View {
     
     var pickerOptions = ["Apple", "Tesla", "NASA"]
     @State var pickerVariant = 0
+    @EnvironmentObject var newsapiVM: NewsapiVM
     
     var body: some View {
         NavStack(transition: .custom(.moveAndFade)){
@@ -23,6 +24,18 @@ struct ScreenSwitcher: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                .onChange(of: pickerVariant) { newValue in
+                    switch newValue {
+                    case 0:
+                        newsapiVM.setRubric(newRubric: "Apple")
+                    case 1:
+                        newsapiVM.setRubric(newRubric: "Tesla")
+                    case 2:
+                        newsapiVM.setRubric(newRubric: "NASA")
+                    default:
+                        newsapiVM.setRubric(newRubric: "Apple")
+                    }
+                }
                 
                 switch pickerVariant {
                 case 0:

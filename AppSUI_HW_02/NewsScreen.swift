@@ -16,6 +16,10 @@ final class NewsapiVM: ObservableObject {
     @Published var articles: [Article] = []
     
     var rubric: String = "Apple"
+    
+    init() {
+        nextPage()
+   }
         
     func nextPage() {
         ArticlesAPI.everythingGet(q: rubric,
@@ -41,16 +45,20 @@ struct NewsScreen: View {
         self.rubric = rubric
     }
     
-    @StateObject var newsapiVM: NewsapiVM = .init()
     var rubric: String
+    @EnvironmentObject var newsapiVM: NewsapiVM
+    
+    @State var isAnimation = false
+    @State var isMoving = false
     
     var body: some View {
-        newsapiVM.setRubric(newRubric: rubric)
-        return VStack {
+        VStack {
             List {
                 ForEach(newsapiVM.articles) { article in
+                    let index = newsapiVM.articles.firstIndex(of: article)
+                    
                     ListArticleCell(title: article.title ?? "",
-                                    description: article.description ?? "")
+                                    description: article.description ?? "", index: index ?? 0)
                 }
             }
             .listStyle(.insetGrouped)
@@ -62,24 +70,32 @@ struct ListArticleCell: View {
     
     var title: String
     var description: String
+    var index: Int
+    
+    @EnvironmentObject var newsapiVM: NewsapiVM
+    @State var isAnimation = false
+    @State var isMoving = false
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(.gray)
+                .foregroundColor(isAnimation ? .clear : .gray)
             VStack {
                 Text(title.isEmpty ? description : title)
-                    .foregroundColor(.white)
+                    .foregroundColor(isAnimation ? .clear : .white)
+                    .offset(x: isMoving ? 100 : 0)
                     .padding()
             }
         }
         .frame(maxWidth: .infinity)
         .frame(height: 200)
+        .onTapGesture {
+            withAnimation(.linear(duration: 2)) {
+                isAnimation.toggle()
+                isMoving.toggle()
+                newsapiVM.articles.remove(at: index)
+            }
+        }
     }
 }
 
-struct NewsScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        NewsScreen(rubric: "")
-    }
-}

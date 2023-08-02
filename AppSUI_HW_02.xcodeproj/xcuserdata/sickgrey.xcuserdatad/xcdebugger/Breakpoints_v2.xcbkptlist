@@ -7,69 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B809F3FA-7AF6-4450-ACB8-EEAB1959E791"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AppSUI_HW_02/NewsScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "B809F3FA-7AF6-4450-ACB8-EEAB1959E791 - 6eb5bcb2b613dc8c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AppSUI_HW_02.NewsScreen.body.getter : some"
-                  moduleName = "AppSUI_HW_02"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sickgrey/Documents/Swift/Projects/AppSUI_HW_02/AppSUI_HW_02/NewsScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "212">
-               </Location>
-               <Location
-                  uuid = "B809F3FA-7AF6-4450-ACB8-EEAB1959E791 - cb693b66f92debae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.pickerStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.PickerStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of AppSUI_HW_02.NewsScreen.list : some&gt;&gt;.0, &lt;&lt;opaque return type of AppSUI_HW_02.NewsScreen.grid : some&gt;&gt;.0&gt;, SwiftUI.EmptyView&gt;)&gt; in AppSUI_HW_02.NewsScreen.body.getter : some"
-                  moduleName = "AppSUI_HW_02"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sickgrey/Documents/Swift/Projects/AppSUI_HW_02/AppSUI_HW_02/NewsScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "836">
-               </Location>
-               <Location
-                  uuid = "B809F3FA-7AF6-4450-ACB8-EEAB1959E791 - 6eb5bcb2b613dc8c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AppSUI_HW_02.NewsScreen.body.getter : some"
-                  moduleName = "AppSUI_HW_02"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sickgrey/Documents/Swift/Projects/AppSUI_HW_02/AppSUI_HW_02/NewsScreen.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "144">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2A0B840D-E241-4B1C-9DEA-047C21AFC79F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -77,8 +14,8 @@
             filePath = "AppSUI_HW_02/NewsScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "nextPage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -93,8 +30,8 @@
             filePath = "AppSUI_HW_02/NewsScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "setRubric(newRubric:)"
             landmarkType = "7">
          </BreakpointContent>

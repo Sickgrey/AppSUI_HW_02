@@ -12,6 +12,7 @@ struct AppSUI_HW_02App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(NewsapiVM())
         }
     }
 }
